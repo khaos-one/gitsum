@@ -1,7 +1,26 @@
 ﻿[
     {
-      "path": "D:/Work/gitsum",
-      "name": "gitsum",
-      "description": "gitsum repository"
+        "path": "D:/Work/gitsum",
+        "name": "gitsum",
+        "description": "gitsum repository",
+        "url": "git@md.office:gitsum"
+    },
+    {
+        "path": "D:/Work/SlashCube.Server",
+        "name": "SlashCube.Server",
+        "description": "server for slashcube game",
+        "url": "git@md.office:slashcube-server"
+    },
+    {
+        "path": "D:/Work/CatChi.Server",
+        "name": "CatChi.Server",
+        "description": "server for catchi game",
+        "url": "git@md.office:catchi-server"
+    },
+    {
+        "path": "D:/Work/MadDevices.Core",
+        "name": "MadDevices.Core",
+        "description": "core gaming library",
+        "url": "git@md.office:maddevices-core"
     }
 ]

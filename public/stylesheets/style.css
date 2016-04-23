@@ -11,39 +11,65 @@ body {
 a {
   color: #00b7ff;
 }
-.desc {
+.repo header h1 {
+  padding-left: 42px;
+  background: url("../images/git-repo-icon.png") left no-repeat;
+  background-size: 32px;
+  line-height: 1.2em;
+}
+.repo header .url {
+  float: right;
+  margin-top: 15px;
+}
+.repo header .desc {
   font-size: 1.1em;
   margin-top: -20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   color: #808080;
 }
-.log {
+.repo .log {
+  padding: 0 10px;
   font-size: 1.2em;
   display: table;
   width: 100%;
   table-layout: fixed;
   overflow: hidden;
+  border-spacing: 5px;
 }
-.log .line {
+.repo .log .line {
   display: table-row;
   width: 100%;
-  line-height: 2em;
+  line-height: 1.5em;
 }
-.log .line div {
+.repo .log .line div {
   display: table-cell;
   white-space: nowrap;
 }
-.log .line .date {
+.repo .log .line .date {
   width: 175px;
 }
-.log .line .author {
+.repo .log .line .author {
   width: 350px;
+  white-space: normal;
 }
-.log .line .message {
+.repo .log .line .message {
   width: 99%;
-  white-space: wrap;
+  white-space: normal;
   font-weight: bold;
 }
-.log .line .hash {
+.repo .log .line .hash {
   width: 100px;
+  font-family: monospace;
+}
+.repo .more {
+  color: #808080;
+  font-size: 1em;
+  padding: 0 15px;
+}
+.repoend {
+  padding: 0;
+  border: none;
+  border-top: 1px solid #333;
+  color: #333;
+  text-align: center;
 }

@@ -21,6 +21,7 @@ router.get('/', function (req, res) {
     							name: item.name, 
                                 path: item.path, 
                                 description: item.description,
+                                url: item.url,
     							log: log,
     							isBroken: false 
     						});
@@ -32,6 +33,7 @@ router.get('/', function (req, res) {
     						name: item.name, 
                             path: item.path,
                             description: item.description,
+                            url: item.url,
     						log: [],
     						isBroken: true 
     					});

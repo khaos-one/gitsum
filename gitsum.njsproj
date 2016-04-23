@@ -34,6 +34,7 @@
     <Compile Include="routes\index.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
+    <Content Include="public\images\git-repo-icon.png" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="repositories.json" />

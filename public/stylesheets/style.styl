@@ -7,6 +7,7 @@
 // Variables.
 //
 common_font = "PT Serif", Helvetica, Arial, sans-serif
+monospace_font = monospace
 
 //
 // Main stylesheet.
@@ -19,31 +20,55 @@ body
   font: 14px common_font
 a
   color: #00B7FF
-.desc
-  font-size: 1.1em
-  margin-top: -20px
-  padding-bottom: 40px
-  color: grey
-.log
-  font-size: 1.2em
-  display: table
-  width: 100%
-  table-layout: fixed
-  overflow: hidden
-  .line
-      display: table-row
-      width: 100%
-      line-height: 2em
-      div
-        display: table-cell
-        white-space: nowrap
-      .date
-        width: 175px
-      .author
-        width: 350px
-      .message
-        width: 99%
-        white-space: wrap
-        font-weight: bold
-      .hash
-        width: 100px
+.repo
+  header
+    h1
+      padding-left: 42px
+      background: url('../images/git-repo-icon.png') left no-repeat
+      background-size: 32px;
+      line-height: 1.2em
+    .url
+      float: right
+      margin-top: 15px
+    .desc
+      font-size: 1.1em
+      margin-top: -20px
+      padding-bottom: 20px
+      color: grey
+  .log
+    padding: 0 10px
+    font-size: 1.2em
+    display: table
+    width: 100%
+    table-layout: fixed
+    overflow: hidden
+    border-spacing: 5px
+    .line
+        display: table-row
+        width: 100%
+        line-height: 1.5em
+        div
+          display: table-cell
+          white-space: nowrap
+        .date
+          width: 175px
+        .author
+          width: 350px
+          white-space: normal
+        .message
+          width: 99%
+          white-space: normal
+          font-weight: bold
+        .hash
+          width: 100px
+          font-family: monospace_font
+  .more
+    color: grey
+    font-size: 1em
+    padding: 0 15px
+.repoend
+  padding: 0
+  border: none
+  border-top: 1px solid #333
+  color: #333
+  text-align: center
