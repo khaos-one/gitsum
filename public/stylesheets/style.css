@@ -11,6 +11,9 @@ body {
 a {
   color: #00b7ff;
 }
+.repo {
+  margin-bottom: 80px;
+}
 .repo header h1 {
   padding-left: 42px;
   background: url("../images/git-repo-icon.png") left no-repeat;
@@ -20,6 +23,7 @@ a {
 .repo header .url {
   float: right;
   margin-top: 15px;
+  color: #808080;
 }
 .repo header .desc {
   font-size: 1.1em;
