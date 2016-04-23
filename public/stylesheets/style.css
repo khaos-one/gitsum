@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700");
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 50px;
+  font: 14px "PT Serif", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.desc {
+  font-size: 1.1em;
+  margin-top: -20px;
+  padding-bottom: 40px;
+  color: #808080;
+}
+.log {
+  font-size: 1.2em;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  overflow: hidden;
+}
+.log .line {
+  display: table-row;
+  width: 100%;
+  line-height: 2em;
+}
+.log .line div {
+  display: table-cell;
+  white-space: nowrap;
+}
+.log .line .date {
+  width: 175px;
+}
+.log .line .author {
+  width: 350px;
+}
+.log .line .message {
+  width: 99%;
+  white-space: wrap;
+  font-weight: bold;
+}
+.log .line .hash {
+  width: 100px;
+}

@@ -1,5 +1,18 @@
 ﻿extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  each repo in repositories
+    h1 #{repo.name}
+
+    .desc #{repo.description}
+    
+    .log
+      each commit in repo.log
+        .line
+            .date #{commit.date.toLocaleString()}
+            .author #{commit.author.name} &lt;#{commit.author.email}&gt;
+            .message #{commit.message}
+            .hash #{commit.commit.substring(0, 10)}
+
+    if repo.isBroken
+      p(style='color:red') repo is broken
