@@ -25,12 +25,29 @@ router.get('/', function (req, res) {
       });
 
       // Truncate array and group items by days.
-      log = log.slice(0, 30);
+      log = log.slice(0, 50);
       
       // TODO: Finish array formatting by days.
+      var feed = [];
+
+      for (var i = 0; i < log.length; i++) {
+        for (var j = 0; j < feed.length; j++) {
+          var found = false;
+          
+          if (log[i].date === feed[j].date) {
+            feed[j].activity.push(log[i]);
+            found = true;
+            break;
+          }
+        }
+
+        if (!found) {
+          feed.push({ date: log[i].date, activity: [log[i]]});
+        }
+      }
 
       // Render the page.
-      res.render('feed/index', { feed: log });
+      res.render('feed/index', { feed: feed });
     }
   })
 });
