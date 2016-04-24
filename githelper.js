@@ -36,7 +36,8 @@ module.exports.getLogWithRepoName = function getLogWithRepoName(repoInfo, callba
     }
     else {
       for (var i = 0; i < result.length; i++) {
-        result[i].path = repoInfo.name;
+        result[i].path = repoInfo.path;
+        result[i].name = repoInfo.name;
       }
 
       callback(null, result);

@@ -3,6 +3,7 @@ const router = express.Router();
 const git = require('nodegit-kit');
 const async = require('async');
 const githelper = require('../githelper');
+require('datejs');
 
 const reposConfig = require('../repositories.json');
 
@@ -31,10 +32,10 @@ router.get('/', function (req, res) {
       var feed = [];
 
       for (var i = 0; i < log.length; i++) {
+        var found = false;
+
         for (var j = 0; j < feed.length; j++) {
-          var found = false;
-          
-          if (log[i].date === feed[j].date) {
+          if (log[i].date.same().day(feed[j].date)) {
             feed[j].activity.push(log[i]);
             found = true;
             break;

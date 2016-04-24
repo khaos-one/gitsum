@@ -1,5 +1,9 @@
 extends ../layout
 
 block content
-  each day in feed
-    | !{JSON.stringify(day)}
+  .feed
+    each day in feed
+      .day #{day.date.toLocaleDateString()}
+        .activity
+          each activity in day.activity
+            .line #{activity.author.name} &lt;#{activity.author.email}&gt; &mdash; #{activity.name} &mdash; #{activity.message} (#{activity.commit.slice(0, 10)})
