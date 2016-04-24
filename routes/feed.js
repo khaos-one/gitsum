@@ -3,7 +3,7 @@ const router = express.Router();
 const git = require('nodegit-kit');
 const async = require('async');
 const githelper = require('../githelper');
-require('datejs');
+const moment = require('moment');
 
 const reposConfig = require('../repositories.json');
 
@@ -26,7 +26,9 @@ router.get('/', function (req, res) {
       });
 
       // Truncate array and group items by days.
+      var totalActivityCount = log.length;
       log = log.slice(0, 50);
+      var shawnActivitiesCount = log.length;
       
       // TODO: Finish array formatting by days.
       var feed = [];
@@ -35,7 +37,7 @@ router.get('/', function (req, res) {
         var found = false;
 
         for (var j = 0; j < feed.length; j++) {
-          if (log[i].date.same().day(feed[j].date)) {
+          if (moment(log[i].date).isSame(feed[j].date, 'day')) {
             feed[j].activity.push(log[i]);
             found = true;
             break;
@@ -43,12 +45,19 @@ router.get('/', function (req, res) {
         }
 
         if (!found) {
-          feed.push({ date: log[i].date, activity: [log[i]]});
+          feed.push({ 
+            date: log[i].date, 
+            activity: [log[i]]
+          });
         }
       }
 
       // Render the page.
-      res.render('feed/index', { feed: feed });
+      res.render('feed/index', { 
+        feed: feed, 
+        totalActivityCount: totalActivityCount,
+        shawnActivitiesCount: shawnActivitiesCount 
+      });
     }
   })
 });

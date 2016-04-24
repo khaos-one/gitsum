@@ -3,7 +3,14 @@ extends ../layout
 block content
   .feed
     each day in feed
-      .day #{day.date.toLocaleDateString()}
+      .day(title=day.date.toLocaleDateString()) #{moment(day.date).format('MMM Do YY')}
         .activity
           each activity in day.activity
-            .line #{activity.author.name} &lt;#{activity.author.email}&gt; &mdash; #{activity.name} &mdash; #{activity.message} (#{activity.commit.slice(0, 10)})
+            .line 
+              .date(title=activity.date) #{moment(activity.date).fromNow()}
+              .proj #{activity.name} 
+              .author #{activity.author.name} &lt;#{activity.author.email}&gt; &mdash; 
+              em.desc #{activity.message} (
+                span.hash #{activity.commit.slice(0, 10)}
+                | )
+    .total-count ...and #{totalActivityCount - shawnActivitiesCount} other actions.

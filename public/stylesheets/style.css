@@ -77,3 +77,12 @@ a {
   color: #333;
   text-align: center;
 }
+.feed {
+  font-size: 1.2em;
+}
+.feed .activity {
+  line-height: 1.5em;
+}
+.feed .activity .line .hash {
+  font-family: monospace;
+}

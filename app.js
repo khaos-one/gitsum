@@ -4,7 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-require('datejs');
+const moment = require('moment');
 
 // require routes
 const routes = require('./routes/index');
@@ -27,7 +27,6 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // other setup
-Date.i18n.setLanguage('en-US');
 
 // routes
 app.use('/', routes);
@@ -65,5 +64,6 @@ app.use(function (err, req, res, next) {
   });
 });
 
-
+// exports
+app.locals.moment = moment;
 module.exports = app;
