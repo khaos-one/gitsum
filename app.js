@@ -27,6 +27,16 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // other setup
+// configure logging
+if (app.get('env') === 'production') {
+  app.use(morgan('common', { 
+    skip: function (req, res) { return res.statusCode < 400}, 
+    stream: path.join(__dirname, global.config.logPath)
+  }));
+}
+else {
+    app.use(morgan('dev'));
+}
 
 // routes
 app.use('/', routes);
